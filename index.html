@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoboLab - Aprenda Robótica</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVEGAÇÃO -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🤖 <span>Robo<span>Lab</span></span>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#fundamentos">Fundamentos</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#carreira">Carreira</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+            <p class="tag">🚀 TECNOLOGIA • CRIATIVIDADE • INOVAÇÃO</p>
+
+            <h1>
+                Descubra o mundo da
+                <span>ROBÓTICA</span>
+            </h1>
+
+            <p>
+                Aprenda programação, eletrônica e robótica
+                através de projetos divertidos e desafios práticos.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#fundamentos" class="btn primary">
+                    Começar a aprender
+                </a>
+
+                <a href="#desafios" class="btn secondary">
+                    🎯 Ver desafios
+                </a>
+            </div>
+        </div>
+
+        <div class="robot">
+            <div class="robot-head">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <div class="robot-body">
+                <div class="screen">R</div>
+            </div>
+
+            <div class="robot-arm left"></div>
+            <div class="robot-arm right"></div>
+
+            <div class="robot-leg left"></div>
+            <div class="robot-leg right"></div>
+        </div>
+
+    </section>
+
+    <!-- FUNDAMENTOS -->
+    <section class="section" id="fundamentos">
+
+        <div class="section-title">
+            <p>PRIMEIROS PASSOS</p>
+            <h2>Fundamentos da Robótica</h2>
+            <span></span>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>Mecânica</h3>
+                <p>
+                    Entenda como engrenagens, estruturas e motores
+                    fazem um robô se movimentar.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Eletrônica</h3>
+                <p>
+                    Aprenda sobre circuitos, energia, sensores,
+                    LEDs e componentes eletrônicos.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Programação</h3>
+                <p>
+                    Desenvolva programas capazes de controlar
+                    sensores e movimentos do robô.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📡</div>
+                <h3>Sensores</h3>
+                <p>
+                    Descubra como os robôs percebem distância,
+                    luz, temperatura e obstáculos.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section dark-section" id="projetos">
+
+        <div class="section-title">
+            <p>APRENDA FAZENDO</p>
+            <h2>Projetos Práticos</h2>
+            <span></span>
+        </div>
+
+        <div class="projects">
+
+            <article class="project">
+                <div class="project-image blue">
+                    🚦
+                </div>
+
+                <div class="project-content">
+                    <span class="level beginner">INICIANTE</span>
+                    <h3>Semáforo com Arduino</h3>
+                    <p>
+                        Crie um sistema de semáforo utilizando LEDs
+                        e programação.
+                    </p>
+
+                    <button onclick="mostrarProjeto('semaforo')">
+                        Ver projeto →
+                    </button>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-image purple">
+                    🤖
+                </div>
+
+                <div class="project-content">
+                    <span class="level intermediate">INTERMEDIÁRIO</span>
+                    <h3>Robô Desviador</h3>
+                    <p>
+                        Construa um robô capaz de detectar obstáculos
+                        e mudar sua direção.
+                    </p>
+
+                    <button onclick="mostrarProjeto('robo')">
+                        Ver projeto →
+                    </button>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-image green">
+                    📏
+                </div>
+
+                <div class="project-content">
+                    <span class="level beginner">INICIANTE</span>
+                    <h3>Sensor de Distância</h3>
+                    <p>
+                        Use um sensor ultrassônico para medir
+                        a distância de objetos.
+                    </p>
+
+                    <button onclick="mostrarProjeto('sensor')">
+                        Ver projeto →
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="projectModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="fecharModal()">×</button>
+
+            <h2 id="modalTitle">Projeto</h2>
+
+            <p id="modalText"></p>
+
+            <div class="code-box">
+                <span>// Exemplo de código</span>
+                <pre id="modalCode"></pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DESAFIOS -->
+    <section class="section" id="desafios">
+
+        <div class="section-title">
+            <p>TESTE SEUS CONHECIMENTOS</p>
+            <h2>Desafio de Robótica</h2>
+            <span></span>
+        </div>
+
+        <div class="quiz">
+
+            <div class="quiz-header">
+                <span>🏆 Desafio #01</span>
+                <span id="questionNumber">Pergunta 1/3</span>
+            </div>
+
+            <h3 id="question">
+                Qual componente permite que um robô detecte
+                objetos ao seu redor?
+            </h3>
+
+            <div id="answers" class="answers">
+
+                <button onclick="responder(0)">
+                    Motor
+                </button>
+
+                <button onclick="responder(1)">
+                    Sensor
+                </button>
+
+                <button onclick="responder(2)">
+                    Bateria
+                </button>
+
+                <button onclick="responder(3)">
+                    LED
+                </button>
+
+            </div>
+
+            <div id="quizResult"></div>
+
+        </div>
+
+    </section>
+
+    <!-- PROGRESSO -->
+    <section class="progress-section">
+
+        <div class="progress-container">
+
+            <div>
+                <p>SEU PROGRESSO</p>
+                <h2>Continue sua jornada 🚀</h2>
+            </div>
+
+            <div class="progress-number">
+                <strong id="progressValue">20%</strong>
+                <span>concluído</span>
+            </div>
+
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressBar"></div>
+        </div>
+
+    </section>
+
+    <!-- CARREIRA -->
+    <section class="section" id="carreira">
+
+        <div class="section-title">
+            <p>SEU FUTURO</p>
+            <h2>Onde a Robótica pode levar você?</h2>
+            <span></span>
+        </div>
+
+        <div class="career-grid">
+
+            <div class="career">
+                <span>🤖</span>
+                <h3>Engenharia Robótica</h3>
+                <p>
+                    Criação e desenvolvimento de robôs
+                    para diferentes aplicações.
+                </p>
+            </div>
+
+            <div class="career">
+                <span>💻</span>
+                <h3>Programação</h3>
+                <p>
+                    Desenvolvimento dos sistemas que controlam
+                    máquinas e robôs.
+                </p>
+            </div>
+
+            <div class="career">
+                <span>🏭</span>
+                <h3>Automação</h3>
+                <p>
+                    Desenvolvimento de sistemas automatizados
+                    para a indústria.
+                </p>
+            </div>
+
+            <div class="career">
+                <span>🧠</span>
+                <h3>Inteligência Artificial</h3>
+                <p>
+                    Criação de máquinas capazes de aprender
+                    e tomar decisões.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-logo">
+            🤖 RoboLab
+        </div>
+
+        <p>
+            Aprender. Criar. Programar. Inovar.
+        </p>
+
+        <small>
+            Projeto educacional de robótica para estudantes.
+        </small>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
